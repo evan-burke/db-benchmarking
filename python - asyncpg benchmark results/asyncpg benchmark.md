@@ -4,6 +4,10 @@
 Benchmark used:
 https://github.com/MagicStack/pgbench
 
+Results here:
+https://evan-burke.github.io/db-benchmarking/results.html
+
+
 ## Notes for getting the benchmark up and running: 
 
 
