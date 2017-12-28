@@ -28,12 +28,13 @@ apt-get install -y postgresql
 
 edit:
 /etc/postgresql/*/main/pg_hba.conf
-set this to 'trust' instead of 'peer'
+
+set this to 'trust' instead of 'peer':
 
 # Database administrative login by Unix domain socket
 local   all             postgres                                peer
 
-change this to trust too:
+change this to trust too instead of md5:
 host    all             all             127.0.0.1/32            md5
 
 sudo service postgresql reload
