@@ -28,14 +28,14 @@ cd pgbench
 pip install -r requirements.txt
 ```
 
-The automatic pg cluster creation in the benchmark script wasn't working for me, so I set up a local postgres user for this:
+The automatic pg cluster creation in the benchmark script wasn't working for me, so I set up a local postgres user for this.
 
-edit this:
+Edit this:
 ```shell
 sudo nano /etc/postgresql/*/main/pg_hba.conf
 ```
 
-set both of these lines  to 'trust' instead of 'peer' and 'md5':
+Set both of these lines  to 'trust' instead of 'peer' and 'md5':
 ```
 # Database administrative login by Unix domain socket
 local   all             postgres                                peer
@@ -50,15 +50,21 @@ make
 ```
 
 If skipping node, edit the pgbench file to remove node benchmarks from the following list, around line 360:
-`BENCHMARKS = [ ... `
+```
+BENCHMARKS = [ ... 
+```
 
-Run bench. Takes ~20 min or so. 
+Run bench. Takes ~20 min or so with these settings.
 ```shell
 ./pgbench --pguser postgres --pghost 127.0.0.1 -H results.html -J results.json
 ```
 
 
+
 ## Todo: 
-maybe add this to the benchmark script and compare against it? 
-SqlAlchemy wrapper
+Maybe add these to the benchmark script and compare against it? 
+SqlAlchemy wrapper for asyncpg; their brief tests show it's slightly faster in some cases (how?)
 https://github.com/CanopyTax/asyncpgsa
+
+turodbc
+https://github.com/blue-yonder/turbodbc
