@@ -70,5 +70,5 @@ Maybe add these to the benchmark script and compare against it?
 SqlAlchemy wrapper for asyncpg; their brief tests show it's slightly faster in some cases (how?)
 https://github.com/CanopyTax/asyncpgsa
 
-turodbc
+turodbc - oriented towards batched operations, not single-row. support for exasol, Arrow, numpy, in addition to standard relational DBs.
 https://github.com/blue-yonder/turbodbc
